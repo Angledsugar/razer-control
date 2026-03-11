@@ -1,0 +1,30 @@
+{
+    "poll_interval_sec": 5,
+    "fan_curve": [
+        {"temp": 40, "rpm": 800},
+        {"temp": 50, "rpm": 1500},
+        {"temp": 60, "rpm": 2500},
+        {"temp": 70, "rpm": 3500},
+        {"temp": 80, "rpm": 4500},
+        {"temp": 90, "rpm": 5400}
+    ],
+    "min_rpm": 800,
+    "max_rpm": 5400,
+    "temp_sources": [
+        {"name": "SEN1", "type": "thermal_zone", "zone_name": "SEN1"},
+        {"name": "SEN2", "type": "thermal_zone", "zone_name": "SEN2"}
+    ],
+    "log_level": "INFO",
+    "log_file": "/var/log/razer-control-daemon.log",
+    "hysteresis_deg": 3,
+    "cpu_perf": "Medium",
+    "gpu_perf": "Medium",
+    "battery_enabled": true,
+    "battery_level": 60,
+    "logo_enabled": true,
+    "logo_mode": "Static",
+    "keyb_mode": "Spectrum",
+    "keyb_speed": 1,
+    "keyb_rgb": [255, 255, 255],
+    "keyb_direction": "Left"
+}

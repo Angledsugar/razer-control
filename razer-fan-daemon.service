@@ -1,0 +1,24 @@
+[Unit]
+Description=Razer Blade Fan Control Daemon
+After=multi-user.target
+Wants=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/razer-fan-daemon/razer_fan_daemon.py --config /etc/razer-fan-daemon.json
+ExecStop=/bin/kill -SIGTERM $MAINPID
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=razer-fan-daemon
+
+# Security hardening
+ProtectSystem=strict
+ReadWritePaths=/var/log /dev
+ProtectHome=yes
+NoNewPrivileges=no
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

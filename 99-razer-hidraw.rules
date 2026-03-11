@@ -1,0 +1,3 @@
+# udev rule to allow root access to Razer HID devices
+# This ensures the hidraw devices are accessible by the daemon
+KERNEL=="hidraw*", ATTRS{idVendor}=="1532", MODE="0660", GROUP="plugdev"
